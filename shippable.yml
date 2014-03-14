@@ -18,10 +18,4 @@ after_success :
 git:
  submodules: false
 
-# collection scripts
-script:
- - ./minions/do_something.sh
- - ./minions/do_something_else.sh
 
-# script file
-script: ./minions/do_something.sh
