@@ -9,5 +9,19 @@ node_js:
   - 0.10.26
 
 after_script:
-- nodeunit ./TestCalculatorAdd.js
+- nodeunit /Users/linyu/Documents/workspace/Calculator/tese/TestCalculatorAdd.js
 
+after_success :
+- git push git@heroku.com:morning-tor-5771.git master
+
+# for public modules use
+git:
+ submodules: false
+
+# collection scripts
+script:
+ - ./minions/do_something.sh
+ - ./minions/do_something_else.sh
+
+# script file
+script: ./minions/do_something.sh
