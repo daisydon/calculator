@@ -1,0 +1,64 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'rb-readline' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'rb-readline', null ]
+6 verbose cache add name=undefined spec="rb-readline" args=["rb-readline",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'rb-readline',
+7 verbose parsed url   path: 'rb-readline',
+7 verbose parsed url   href: 'rb-readline' }
+8 silly lockFile ea20a46a-rb-readline rb-readline
+9 verbose lock rb-readline /Users/linyu/.npm/ea20a46a-rb-readline.lock
+10 silly lockFile ea20a46a-rb-readline rb-readline
+11 silly lockFile ea20a46a-rb-readline rb-readline
+12 verbose addNamed [ 'rb-readline', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile e93d2497-rb-readline rb-readline@
+15 verbose lock rb-readline@ /Users/linyu/.npm/e93d2497-rb-readline.lock
+16 silly addNameRange { name: 'rb-readline', range: '*', hasData: false }
+17 verbose url raw rb-readline
+18 verbose url resolving [ 'https://registry.npmjs.org/', './rb-readline' ]
+19 verbose url resolved https://registry.npmjs.org/rb-readline
+20 info trying registry request attempt 1 at 13:44:59
+21 http GET https://registry.npmjs.org/rb-readline
+22 http 404 https://registry.npmjs.org/rb-readline
+23 silly registry.get cb [ 404,
+23 silly registry.get   { date: 'Fri, 14 Mar 2014 20:45:00 GMT',
+23 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+23 silly registry.get     'content-type': 'application/json',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'cache-control': 'max-age=0',
+23 silly registry.get     'content-length': '52',
+23 silly registry.get     'accept-ranges': 'bytes',
+23 silly registry.get     age: '0',
+23 silly registry.get     'x-served-by': 'cache-v43-ASH, cache-lax1435-LAX',
+23 silly registry.get     'x-cache': 'MISS, MISS',
+23 silly registry.get     'x-cache-hits': '0, 0',
+23 silly registry.get     'x-timer': 'S1394829900.112375498,VS0,VS-0,VE84,VE149',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 silly lockFile e93d2497-rb-readline rb-readline@
+25 silly lockFile e93d2497-rb-readline rb-readline@
+26 error 404 'rb-readline' is not in the npm registry.
+26 error 404 You should bug the author to publish it
+26 error 404 It was specified as a dependency of 'Calculator'
+26 error 404
+26 error 404 Note that you can also install from a
+26 error 404 tarball, folder, or http url, or git url.
+27 error System Darwin 13.1.0
+28 error command "node" "/usr/local/bin/npm" "install" "rb-readline"
+29 error cwd /Users/linyu/Documents/workspace/Calculator
+30 error node -v v0.10.26
+31 error npm -v 1.4.3
+32 error code E404
+33 verbose exit [ 1, true ]

@@ -1,2 +1,4 @@
-web: node web.js
+web: node ./calculate.js
+
+
 
