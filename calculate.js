@@ -1,4 +1,7 @@
 /**
+ * A calculator which could only add two numbers
+ * 
+ * @author linyu dong
  * 
  */
 
@@ -11,28 +14,34 @@ var url = require("url");
 var qs = require("querystring");
 var math = require("/Users/linyu/Documents/workspace/Calculator/add.js");
 
-httpModule.createServer(
-		function serviceRequest(request, response) {
-			
-			if (request.method === "GET") {
-				response.end(form);
-			}else if (request.method === "POST") {
-				// create an instance
-				var requestbody = "";
-				request.on("data", function(data) {
-					requestbody += data;
-				});
-				request.on("end", function() {
-					var formData = qs.parse(requestbody);
-					var num1 = formData.num1;
-					var num2 = formData.num2;
-					var ret = math.add(num1, num2);
-					response.write("<html><head><title> resonse </title></head><body>");
-					response.write("<br /> result:" + ret);
-					
-					response.end("</body> </html>");
-				});
-				
-			}
-			
-		}).listen(portNumber, ipAddress);
+httpModule
+		.createServer(
+				function serviceRequest(request, response) {
+
+					if (request.method === "GET") {
+						response.end(form);
+					} else if (request.method === "POST") {
+						// create an instance
+						var requestbody = "";
+						request.on("data", function(data) {
+							requestbody += data;
+						});
+						request
+								.on(
+										"end",
+										function() {
+											var formData = qs
+													.parse(requestbody);
+											var num1 = formData.num1;
+											var num2 = formData.num2;
+											var ret = math.add(num1, num2);
+											response
+													.write("<html><head><title> resonse </title></head><body>");
+											response.write("<br /> result:" + ret);
+
+											response.end("</body> </html>");
+										});
+
+					}
+
+				}).listen(portNumber, ipAddress);
