@@ -1,0 +1,29 @@
+{
+  "name": "Calculator",
+  "version": "0.0.0",
+  "description": "This is a calculator, which could only add two numbers.",
+  "main": "TestCalculator.js",
+  "dependencies": {
+    "mathjs": "~0.18.1",
+    "nodeunit": "~0.8.6",
+    "logfmt": "^0.23.0",
+    "express": "^3.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daisydon/calculator.git"
+  },
+  "keywords": [
+    "calculator"
+  ],
+  "author": "Linyu Dong",
+  "license": "Brandeis",
+  "bugs": {
+    "url": "https://github.com/daisydon/calculator/issues"
+  },
+  "homepage": "https://github.com/daisydon/calculator"
+}
