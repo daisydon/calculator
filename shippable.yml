@@ -6,7 +6,7 @@ language: node_js
 
 # version numbers, testing against two versions of node
 node_js:
-  - 0.10.2
+  - 0.10.26
 
 after_script:
 - nodeunit ./TestCalculatorAdd.js
