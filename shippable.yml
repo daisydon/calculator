@@ -20,7 +20,6 @@ script:
 - node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js
 - echo "unit test success"
 
-after_success :
-- git push git@heroku.com:morning-tor-5771.git master
-
+notifications:
+  email: daisydon@brandeis.edu
 
