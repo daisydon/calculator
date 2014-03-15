@@ -6,7 +6,7 @@
  */
 
 var ipAddress = "127.0.0.1",
-portNumber = "80",
+portNumber = process.env.PORT || 8080,
 httpModule = require("http"),
 url = require("url"),
 qs = require("querystring"),
