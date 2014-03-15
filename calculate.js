@@ -6,7 +6,7 @@
  */
 
 var ipAddress = "127.0.0.1",
-portNumber = "50002",
+portNumber = "18320",
 httpModule = require("http"),
 url = require("url"),
 qs = require("querystring"),
