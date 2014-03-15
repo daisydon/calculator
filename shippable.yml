@@ -8,18 +8,17 @@ language: node_js
 node_js:
   - 0.10.25
 
-before_install:
+install:
+- echo "installing"
 - npm install nodeunit
 - npm install mathjs
 
-install:
-- echo "installing"
-
 before_script:
 - echo "before script"
+- mkdir shippable
 
 script:
-- node_modules/nodeunit/bin/nodeunit ./TestCalculatorAdd.js
+- node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js
 - echo "unit test success"
 
 after_success :
