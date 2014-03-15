@@ -15,7 +15,6 @@ install:
 
 before_script:
 - echo "before script"
-- mkdir shippable
 
 script:
 - node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js
