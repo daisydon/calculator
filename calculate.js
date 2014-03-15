@@ -5,18 +5,25 @@
  * 
  */
 
-var ipAddress = "127.0.0.1";
-var portNumber = "50002";
-var form = "<html> <head> <title>Form</title> </head> <body> <h1>Enter numbers</h1> <form method= \"post\"> <input type= \"number\" name=\"num1\"> <input type = \"number\" name = \"num2\"> <input type=\"submit\"> </form </body> </html>";
+var ipAddress = "127.0.0.1",
+portNumber = "50002",
+httpModule = require("http"),
+url = require("url"),
+qs = require("querystring"),
+math = require("./add.js"),
+fs = require("fs"),
+form;
 
-var httpModule = require("http");
-var url = require("url");
-var qs = require("querystring");
-var math = require("./add.js");
 
-httpModule
-		.createServer(
-				function serviceRequest(request, response) {
+fs.readFile("./InputForm.html", function(err, data) {
+	if (err) {
+		throw err;
+	}
+	form = data;
+});
+
+httpModule.createServer(
+				exports.request = function serviceRequest(request, response) {
 
 					if (request.method === "GET") {
 						response.end(form);
@@ -26,18 +33,13 @@ httpModule
 						request.on("data", function(data) {
 							requestbody += data;
 						});
-						request
-								.on(
-										"end",
-										function() {
-											var formData = qs
-													.parse(requestbody);
+						request.on("end", function() {
+											var formData = qs.parse(requestbody);
 											var num1 = formData.num1;
 											var num2 = formData.num2;
 											var ret = math.add(num1, num2);
-											response
-													.write("<html><head><title> resonse </title></head><body>");
-											response.write("<br /> result:" + ret);
+											response.write("<html><head><title> resonse </title></head><body>");
+											response.write("<br /> The result is:" + ret);
 
 											response.end("</body> </html>");
 										});
