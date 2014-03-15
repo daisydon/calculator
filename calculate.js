@@ -42,15 +42,19 @@ app.get("/", function(req, res) {
 });
 app.post("/", function(req, res) {
 	var body = qs.parse(req.body);
+	console.log("req.body", req.body);
+	console.log("body", body);
 	var num1 = body.num1;
+	console.log("num1", num1);
 	var num2 = body.num2;
 	var result = math.add(num1, num2);
+	console.log("num2", num2);
 	console.log("result", result);
 	var header = head(title("response"));
 	console.log("header", header);
 	body = util.format("<br/>The result is %d", result);
 	console.log("body", body);
-	var response = html(head + body);
+	var response = html(header + body);
 	console.log("response", response);
 	res.send(response);
 });
