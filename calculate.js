@@ -6,7 +6,6 @@
  */
 
 var ipAddress = "127.0.0.1",
-portNumber = process.env.PORT || 8080,
 httpModule = require("http"),
 url = require("url"),
 qs = require("querystring"),
@@ -46,4 +45,4 @@ httpModule.createServer(
 
 					}
 
-				}).listen(portNumber, ipAddress);
+				}).listen(Number(process.env.PORT || portNumber), ipAddress);
