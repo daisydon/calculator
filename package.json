@@ -2,7 +2,7 @@
   "name": "Calculator",
   "version": "0.0.0",
   "description": "This is a calculator, which could only add two numbers.",
-  "main": "TestCalculator.js",
+  "main": "Calculator.js",
   "dependencies": {
     "mathjs": "~0.18.1",
     "nodeunit": "~0.8.6",
