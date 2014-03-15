@@ -41,6 +41,7 @@ app.get("/", function(req, res) {
 	res.send(form);
 });
 app.post("/", function(req, res) {
+	console.log("req", req);
 	var body = qs.parse(req.body);
 	console.log("req.body", req.body);
 	console.log("body", body);
