@@ -8,14 +8,15 @@ language: node_js
 node_js:
   - 0.10.26
 
-after_script:
+before_install:
+- npm install nodeunit
+- npm install mathjs
+
+script:
+- node ./calculate.js
 - nodeunit /Users/linyu/Documents/workspace/Calculator/tese/TestCalculatorAdd.js
 
 after_success :
 - git push git@heroku.com:morning-tor-5771.git master
-
-# for public modules use
-git:
- submodules: false
 
 
