@@ -2,7 +2,7 @@
  * New node file
  */
 
-var sum = require("/Users/linyu/Documents/workspace/Calculator/add.js");
+var sum = require("../add.js");
 
 exports.testCalculator = function (test) {
 	test.equal(sum.add(1,4), 5);
