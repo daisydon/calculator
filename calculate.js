@@ -11,11 +11,40 @@ var app = express();
 
 app.use(logfmt.requestLogger());
 
-app.get('/', function(req, res) {
-  res.send('Hello World!');
-});
-
+var fs = require("fs");
 var port = Number(process.env.PORT || 8080);
+var form = fs.readFileSync('./InputForm.html').toString();
+var util = require("util");
+
+var math = require("./add.js");
+console.log(form);
+
+function html(s) {
+	return util.format("<html>%s</html>", s);
+}
+
+function head(s) {
+	return util.format("<head>%s</head>", s);
+}
+
+function title(s) {
+	return util.format("<title>%s</title>", s);
+}
+
+function body(s) {
+	return util.format("<body>%s</body>", s);
+}
+
+// handler for GET/POST
+app.get("/", function(req, res) {
+	res.send(form);
+});
+app.post("/", function(req, res) {
+	var num1 = req.body.num1;
+	var num2 = req.body.num2;
+	var result = math.add(num1, num2);
+	res.send(html(head(title("response")) + body(util.format("<br/>The result is %d", result))));
+});
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
