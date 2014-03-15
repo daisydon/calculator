@@ -19,7 +19,7 @@ before_script:
 - echo "before script"
 
 script:
-- nodeunit ./TestCalculatorAdd.js
+- node_modules/nodeunit/bin/nodeunit ./TestCalculatorAdd.js
 - echo "unit test success"
 
 after_success :
