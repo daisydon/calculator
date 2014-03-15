@@ -12,6 +12,12 @@ before_install:
 - npm install nodeunit
 - npm install mathjs
 
+install:
+- echo "installing"
+
+before_script:
+- echo "before script"
+
 script:
 - node ./calculate.js
 - nodeunit ./TestCalculatorAdd.js
