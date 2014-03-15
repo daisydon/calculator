@@ -15,6 +15,7 @@ var fs = require("fs");
 var port = Number(process.env.PORT || 8080);
 var form = fs.readFileSync('./InputForm.html').toString();
 var util = require("util");
+var qs = require("querystring");
 
 var math = require("./add.js");
 console.log(form);
@@ -40,8 +41,9 @@ app.get("/", function(req, res) {
 	res.send(form);
 });
 app.post("/", function(req, res) {
-	var num1 = req.body.num1;
-	var num2 = req.body.num2;
+	var body = qs.parse(req.body);
+	var num1 = body.num1;
+	var num2 = body.num2;
 	var result = math.add(num1, num2);
 	res.send(html(head(title("response")) + body(util.format("<br/>The result is %d", result))));
 });
