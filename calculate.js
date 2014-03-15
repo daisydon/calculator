@@ -5,7 +5,22 @@
  * 
  */
 
-var ipAddress = "127.0.0.1",
+var express = require("express");
+var logfmt = require("logfmt");
+var app = express();
+
+app.use(logfmt.requestLogger());
+
+app.get('/', function(req, res) {
+  res.send('Hello World!');
+});
+
+var port = Number(process.env.PORT || 8080);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+
+/*var ipAddress = "127.0.0.1",
 httpModule = require("http"),
 url = require("url"),
 qs = require("querystring"),
@@ -45,4 +60,4 @@ httpModule.createServer(
 
 					}
 
-				}).listen(Number(process.env.PORT || 8080), ipAddress);
+				}).listen(Number(process.env.PORT || 8080), ipAddress);*/
