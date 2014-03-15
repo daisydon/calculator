@@ -45,4 +45,4 @@ httpModule.createServer(
 
 					}
 
-				}).listen(Number(process.env.PORT || portNumber), ipAddress);
+				}).listen(Number(process.env.PORT || 8080), ipAddress);
