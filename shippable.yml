@@ -15,9 +15,10 @@ install:
 
 before_script:
 - echo "before script"
+- mkdir -p shippable/testresults
 
 script:
-- node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js shippable/
+- node_modules/nodeunit/bin/nodeunit --reporter junit ./test/TestCalculatorAdd.js shippable/testresults
 - echo "unit test success"
 
 notifications:
