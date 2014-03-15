@@ -9,7 +9,11 @@ var express = require("express");
 var logfmt = require("logfmt");
 var app = express();
 
-app.use(logfmt.requestLogger());
+app.configure(function(){
+	app.use(express.bodyParser());
+	app.use(app.router);
+	app.use(logfmt.requestLogger());
+});
 
 var fs = require("fs");
 var port = Number(process.env.PORT || 8080);
