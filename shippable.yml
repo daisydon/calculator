@@ -17,7 +17,7 @@ before_script:
 - echo "before script"
 
 script:
-- node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js
+- node_modules/nodeunit/bin/nodeunit ./test/TestCalculatorAdd.js shippable/
 - echo "unit test success"
 
 notifications:
