@@ -18,7 +18,7 @@ before_script:
 - mkdir -p shippable/testresults
 
 script:
-- node_modules/nodeunit/bin/nodeunit --reporter junit ./test/TestCalculatorAdd.js shippable/testresults
+- node_modules/nodeunit/bin/nodeunit --reporter junit --output shippable/testresults ./test/TestCalculatorAdd.js
 - echo "unit test success"
 
 notifications:
