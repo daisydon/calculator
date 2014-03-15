@@ -14,7 +14,7 @@ before_install:
 
 script:
 - node ./calculate.js
-- nodeunit /Users/linyu/Documents/workspace/Calculator/tese/TestCalculatorAdd.js
+- nodeunit ./TestCalculatorAdd.js
 
 after_success :
 - git push git@heroku.com:morning-tor-5771.git master
