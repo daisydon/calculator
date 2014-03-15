@@ -12,7 +12,7 @@ var form = "<html> <head> <title>Form</title> </head> <body> <h1>Enter numbers</
 var httpModule = require("http");
 var url = require("url");
 var qs = require("querystring");
-var math = require("/Users/linyu/Documents/workspace/Calculator/add.js");
+var math = require("./add.js");
 
 httpModule
 		.createServer(
