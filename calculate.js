@@ -45,22 +45,14 @@ app.get("/", function(req, res) {
 	res.send(form);
 });
 app.post("/", function(req, res) {
-	console.log("req", req);
-	var body = qs.parse(req.body);
-	console.log("req.body", req.body);
-	console.log("body", body);
-	var num1 = body.num1;
+	var num1 = req.body.num1;
 	console.log("num1", num1);
-	var num2 = body.num2;
+	var num2 = req.body.num2;
 	var result = math.add(num1, num2);
 	console.log("num2", num2);
-	console.log("result", result);
 	var header = head(title("response"));
-	console.log("header", header);
-	body = util.format("<br/>The result is %d", result);
-	console.log("body", body);
+	var body = util.format("<br/>The result is %d", result);
 	var response = html(header + body);
-	console.log("response", response);
 	res.send(response);
 });
 app.listen(port, function() {
